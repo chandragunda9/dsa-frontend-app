@@ -1,0 +1,11 @@
+.no-data-section {
+    margin: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+    text-align: center;
+
+    color: gray;
+}

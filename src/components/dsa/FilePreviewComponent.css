@@ -1,0 +1,11 @@
+.file-preview-section {
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 18px;
+    color: black;
+}
