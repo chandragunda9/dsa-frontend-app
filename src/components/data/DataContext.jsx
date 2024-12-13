@@ -1,13 +1,11 @@
 import { createContext, useContext, useEffect, useState } from "react"
-import { retrieveFileContentApi, retrieveContentApi } from "../api/DSAClient"
+import { retrieveContentApi } from "../api/DSAClient"
 
 const DataContext = createContext()
 
 export const useData = () => useContext(DataContext)
 
 function ContextProvider({ children }) {
-
-    console.log(children);
 
     // default path
     const [pathContent, setPathContent] = useState('codes/')
@@ -49,7 +47,11 @@ function ContextProvider({ children }) {
         setPathContent(pathContent + fileName)
     }
 
-    const valueToShare = { pathContent, folderList, fileList, fileContent, folderClick, fileClick, noDataAvailable }
+    function linkClick(path) {
+        setPathContent(path)
+    }
+
+    const valueToShare = { pathContent, folderList, fileList, fileContent, folderClick, fileClick, linkClick, noDataAvailable }
 
     return (
         <DataContext.Provider value={valueToShare}>

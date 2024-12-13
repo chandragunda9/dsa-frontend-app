@@ -4,8 +4,6 @@ import './FileComponent.css'
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 
 function FileComponent(props) {
-    console.log(props);
-    console.log(props.fileName);
 
     const dataContext = useData()
 
@@ -15,7 +13,9 @@ function FileComponent(props) {
 
     return (
         <div className="file-div" onClick={handleFileClick}>
-            <span><InsertDriveFileIcon /></span>{props.fileName}
+            <span className='icon-right-space'>
+                <InsertDriveFileIcon color='primary' />
+            </span>{props.fileName}
         </div>
     )
 }

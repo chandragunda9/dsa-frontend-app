@@ -5,9 +5,6 @@ import FolderIcon from '@mui/icons-material/Folder';
 
 function FolderComponent(props) {
 
-    console.log(props);
-    console.log(props.folderName);
-
     const dataContext = useData()
 
     function handleFolderClick() {
@@ -16,7 +13,7 @@ function FolderComponent(props) {
 
     return (
         <div className="folder-div" onClick={handleFolderClick}>
-            <span><FolderIcon /></span>{props.folderName}
+            <span className='icon-right-space'><FolderIcon color='success' /></span>{props.folderName}
         </div>
     )
 }

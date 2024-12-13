@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useData } from '../data/DataContext'
 import './FolderBlockComponent.css'
 import FolderComponent from './FolderComponent'
@@ -13,7 +12,7 @@ function FolderBlockComponent() {
             (<></>) :
             (
                 <section className="folder-block-section">
-                    <h2>Folders</h2>
+                    <h2 style={{ color: 'brown' }}>Folders</h2>
 
                     <hr />
                     {

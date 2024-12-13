@@ -14,7 +14,7 @@ function FileBlockComponent() {
             (<></>) :
             (
                 <section className="file-block-section">
-                    <h2>Files</h2>
+                    <h2 style={{ color: 'brown' }}>Files</h2>
 
                     <hr />
                     {
