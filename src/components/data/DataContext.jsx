@@ -8,7 +8,7 @@ export const useData = () => useContext(DataContext)
 function ContextProvider({ children }) {
 
     // default path
-    const [pathContent, setPathContent] = useState('codes/')
+    const [pathContent, setPathContent] = useState('/')
 
     console.log('path is ' + pathContent)
 
@@ -19,12 +19,14 @@ function ContextProvider({ children }) {
     const [fileList, setFileList] = useState(files)
     const [fileContent, setFileContent] = useState('')
     const [noDataAvailable, setNoDataAvailable] = useState(false)
+    const [isLoading, setLoading] = useState(false)
 
     useEffect(
         () => fetchContent(), [pathContent]
     )
 
     function fetchContent() {
+        setLoading(true)
         retrieveContentApi(pathContent)
             .then((res) => {
                 console.log(res.data);
@@ -37,6 +39,9 @@ function ContextProvider({ children }) {
             .catch((error) => {
                 console.log(error);
             })
+            .finally(
+                setLoading(false)
+            )
     }
 
     function folderClick(folderName) {
@@ -51,7 +56,7 @@ function ContextProvider({ children }) {
         setPathContent(path)
     }
 
-    const valueToShare = { pathContent, folderList, fileList, fileContent, folderClick, fileClick, linkClick, noDataAvailable }
+    const valueToShare = { pathContent, folderList, fileList, fileContent, folderClick, fileClick, linkClick, noDataAvailable, isLoading }
 
     return (
         <DataContext.Provider value={valueToShare}>

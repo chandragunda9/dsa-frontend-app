@@ -6,6 +6,7 @@ import FileBlockComponent from "./FileBlockComponent"
 import ContextProvider from "../data/DataContext"
 import FilePreviewComponent from "./FilePreviewComponent"
 import NoDataComponent from "./NoDataComponent"
+import LoaderComponent from "../ui/LoaderComponent"
 
 function DSAComponent() {
 
@@ -20,6 +21,7 @@ function DSAComponent() {
                 <FileBlockComponent />
                 <FilePreviewComponent />
                 <NoDataComponent />
+                <LoaderComponent />
             </ContextProvider>
         </main>
     )

@@ -19,7 +19,7 @@ function FilePreviewComponent() {
     }, [fileContent]);
 
     return (
-        fileContent.length === 0 ? (
+        fileContent?.length === 0 ? (
             <></>
         ) : (
             <section className="file-preview-section">

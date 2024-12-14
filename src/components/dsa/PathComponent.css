@@ -16,6 +16,12 @@
     padding: 0;
 }
 
-.path-link:active {
+.path-link:active,
+.home-icon:active {
     color: brown;
+}
+
+.home-icon {
+    color: blue;
+    cursor: pointer;
 }

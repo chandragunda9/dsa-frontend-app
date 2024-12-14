@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { useData } from '../data/DataContext'
 import './PathComponent.css'
 
+import HomeIcon from '@mui/icons-material/Home';
+import { blue } from '@mui/material/colors';
+
 function PathComponent() {
     const dataContext = useData()
     const path = dataContext.pathContent
@@ -43,12 +46,17 @@ function PathComponent() {
         dataContext.linkClick(cumulativePathMap[segmentIndex])
     }
 
+    function handleHomeLinkClick(homeroute) {
+        dataContext.linkClick(homeroute)
+    }
+
 
     return (
         <section className='path-section'>
+            <HomeIcon className='home-icon' onClick={() => handleHomeLinkClick('/')} />
             {
                 segments.map((segment, index) => {
-                    return <div style={{ display: 'inline' }}>
+                    return <div style={{ display: 'inline' }} key={index}>
                         <button onClick={() => handleLinkClick(index)} key={index} className='path-link'>
                             {segment}</button>
                         {index != segments.length - 1 && <span className='delimiter'>/</span>}
